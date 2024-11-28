@@ -2,7 +2,7 @@ group 'com.example.sslpinningplugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.10'
+    ext.kotlin_version = '1.9.20'
 
 
     repositories {
@@ -27,7 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
     namespace "com.example.sslpinningplugin"
 
     sourceSets {
@@ -38,6 +38,13 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_21
+ targetCompatibility JavaVersion.VERSION_21
+}
+    kotlin {
+        jvmToolchain(21)
     }
 }
 
